@@ -4,21 +4,52 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title> Warisha Rehman | Portfolio</title>
+    <title>Warisha Rehman | Portfolio</title>
     <link rel="stylesheet" href="style.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
         rel="stylesheet">
-
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
 
 <body>
+    <!-- Page Loader -->
+    <div class="page-loader" id="pageLoader">
+        <div class="loader-content">
+            <div class="loader-spinner"></div>
+            <p class="loader-text">Loading...</p>
+        </div>
+    </div>
+
+    <!-- Floating Background Elements -->
+    <div class="floating-bg">
+        <div class="floater f1"></div>
+        <div class="floater f2"></div>
+        <div class="floater f3"></div>
+        <div class="floater f4"></div>
+        <div class="floater f5"></div>
+        <div class="floater f6"></div>
+        <div class="floater f7"></div>
+        <div class="floater f8"></div>
+        <div class="floater-icon fi1"><i class="fab fa-html5"></i></div>
+        <div class="floater-icon fi2"><i class="fab fa-css3-alt"></i></div>
+        <div class="floater-icon fi3"><i class="fab fa-js"></i></div>
+        <div class="floater-icon fi4"><i class="fab fa-react"></i></div>
+        <div class="floater-icon fi5"><i class="fab fa-github"></i></div>
+        <div class="floater-icon fi6"><i class="fas fa-code"></i></div>
+    </div>
+
+    <!-- Particle Canvas -->
+    <canvas id="particleCanvas"></canvas>
+
     <!-- Navbar -->
     <header class="header">
         <nav class="nav container">
-            <a href="#home" class="logo">Warisha Rehman
-
+            <a href="#home" class="logo">
+                <span class="logo-bracket">&lt;</span>
+                Warisha
+                <span class="logo-bracket">/&gt;</span>
             </a>
 
             <ul class="nav-links" id="navLinks">
@@ -26,56 +57,133 @@
                 <li><a href="#about" class="nav-link">About</a></li>
                 <li><a href="#skills" class="nav-link">Skills</a></li>
                 <li><a href="#projects" class="nav-link">Projects</a></li>
-                <!-- <li><a href="#contact" class="nav-link">Contact</a></li> -->
+                <li><a href="#contact" class="nav-link">Contact</a></li>
             </ul>
 
-            <button class="menu-btn" id="menuBtn">☰</button>
+            <div class="nav-actions">
+                <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
+                    <i class="fas fa-moon"></i>
+                    <i class="fas fa-sun"></i>
+                </button>
+                <button class="menu-btn" id="menuBtn">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
         </nav>
     </header>
 
     <!-- Hero -->
     <main>
         <section id="home" class="hero-wrap">
-            <div class="floater f1"></div>
-            <div class="floater f2"></div>
-            <div class="floater f3"></div>
-
             <div class="hero container">
                 <div class="hero-left">
-                    <p class="badge">Frontend Developer</p>
-                    <h1>Hi, I'm <span class="highlight">Warisha Rehman</span></h1>
-                    <p class="hero-desc">
-                        I build responsive and modern websites using HTML, CSS, and JavaScript.
-                        Currently learning React and building real-world projects.
-                    </p>
-                    <p class="typing-line">
-                        <span class="typing-prefix">I am a </span>
+                    <div class="badge-wrapper">
+                        <p class="badge">
+                            <span class="badge-dot"></span>
+                            Available for Work
+                        </p>
+                    </div>
+                    <h1>
+                        <span class="greeting">Hello, I'm</span>
+                        <span class="name-wrapper">
+                            <span class="highlight">Warisha Rehman</span>
+                        </span>
+                    </h1>
+                    <h2 class="hero-subtitle">
+                        <span class="typing-prefix">I'm a </span>
                         <span id="typingText" class="typing-text"></span>
+                        <span class="cursor">|</span>
+                    </h2>
+                    <p class="hero-desc">
+                        I craft responsive and modern web experiences with clean code and beautiful interfaces.
+                        Passionate about turning ideas into interactive digital solutions.
                     </p>
 
-                    <!-- <div class="social-row">
-                        <a class="social-btn" href="https://github.com/" target="_blank">🐙 GitHub</a>
-                        <a class="social-btn" href="https://linkedin.com/" target="_blank">💼 LinkedIn</a>
-                        <a class="social-btn" href="mailto:yourmail@gmail.com">💌 Email</a>
-                    </div> -->
-
-                    <div class="hero-buttons">
-                        <a href="#projects" class="btn primary">View Projects</a>
-                        <a href="assets/resume.pdf" class="btn outline" download>Download Resume</a>
-                        <a href="assets/resume.pdf" class="btn ghost" target="_blank">View Resume</a>
+                    <div class="hero-stats">
+                        <div class="stat-item">
+                            <span class="stat-number" data-target="10">0</span>+
+                            <span class="stat-label">Projects</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number" data-target="6">0</span>+
+                            <span class="stat-label">Technologies</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number" data-target="2">0</span>+
+                            <span class="stat-label">Years Learning</span>
+                        </div>
                     </div>
 
+                    <div class="hero-buttons">
+                        <a href="#projects" class="btn primary">
+                            <i class="fas fa-rocket"></i>
+                            View Projects
+                        </a>
+                        <a href="#contact" class="btn outline">
+                            <i class="fas fa-envelope"></i>
+                            Contact Me
+                        </a>
+                        <a href="assets/resume.pdf" class="btn ghost" target="_blank">
+                            <i class="fas fa-file-alt"></i>
+                            Resume
+                        </a>
+                    </div>
+
+                    <div class="social-links">
+                        <a href="https://github.com/" target="_blank" class="social-link" aria-label="GitHub">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="https://linkedin.com/" target="_blank" class="social-link" aria-label="LinkedIn">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="https://twitter.com/" target="_blank" class="social-link" aria-label="Twitter">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="mailto:warisha@example.com" class="social-link" aria-label="Email">
+                            <i class="fas fa-envelope"></i>
+                        </a>
+                    </div>
                 </div>
 
                 <div class="hero-right">
-                    <div class="profile-card">
-                        <div class="profile-img">👨‍💻</div>
-                        <p class="profile-text">Open to Internships</p>
+                    <div class="profile-card-wrapper">
+                        <div class="profile-card">
+                            <div class="profile-glow"></div>
+                            <div class="profile-img-container">
+                                <div class="profile-img">
+                                    <i class="fas fa-user-astronaut"></i>
+                                </div>
+                                <div class="profile-ring"></div>
+                                <div class="profile-ring ring-2"></div>
+                            </div>
+                            <div class="profile-info">
+                                <h3>Warisha Rehman</h3>
+                                <p class="profile-role">Frontend Developer</p>
+                                <div class="profile-status">
+                                    <span class="status-dot"></span>
+                                    Open to Internships
+                                </div>
+                            </div>
+                            <div class="profile-tech-stack">
+                                <span class="tech-icon" title="HTML5"><i class="fab fa-html5"></i></span>
+                                <span class="tech-icon" title="CSS3"><i class="fab fa-css3-alt"></i></span>
+                                <span class="tech-icon" title="JavaScript"><i class="fab fa-js"></i></span>
+                                <span class="tech-icon" title="React"><i class="fab fa-react"></i></span>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
-        </section>
 
+            <div class="scroll-indicator">
+                <div class="mouse">
+                    <div class="wheel"></div>
+                </div>
+                <span>Scroll Down</span>
+            </div>
+        </section>
 
         <div class="wave-divider">
             <svg viewBox="0 0 1440 120" preserveAspectRatio="none">
@@ -86,144 +194,400 @@
         </div>
 
         <!-- About -->
-        <section id="about" class="section container">
-            <h2 class="section-title">About Me</h2>
-            <p class="section-text">
-                I’m a Computer Science / AI student and a frontend developer who loves
-                building clean UI and interactive web experiences. I focus on writing
-                responsive, user-friendly websites and improving performance.
-            </p>
+        <section id="about" class="section about-section">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-tag">Get to Know Me</span>
+                    <h2 class="section-title">About Me</h2>
+                </div>
+                <div class="about-content">
+                    <div class="about-text">
+                        <p>
+                            I'm a <strong>Computer Science / AI student</strong> and a passionate frontend developer
+                            who loves building clean, user-friendly interfaces and interactive web experiences.
+                        </p>
+                        <p>
+                            My journey in web development started with curiosity about how websites work,
+                            and it has evolved into a deep passion for creating digital experiences that
+                            are both beautiful and functional.
+                        </p>
+                        <p>
+                            I focus on writing <strong>responsive, accessible code</strong> and constantly
+                            learning new technologies to improve my craft. Currently diving deep into
+                            <strong>React</strong> and building real-world projects.
+                        </p>
+                        <div class="about-highlights">
+                            <div class="highlight-item">
+                                <i class="fas fa-graduation-cap"></i>
+                                <span>CS/AI Student</span>
+                            </div>
+                            <div class="highlight-item">
+                                <i class="fas fa-laptop-code"></i>
+                                <span>Frontend Developer</span>
+                            </div>
+                            <div class="highlight-item">
+                                <i class="fas fa-palette"></i>
+                                <span>UI/UX Enthusiast</span>
+                            </div>
+                            <div class="highlight-item">
+                                <i class="fas fa-lightbulb"></i>
+                                <span>Problem Solver</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="about-image">
+                        <div class="about-img-wrapper">
+                            <div class="about-img-bg"></div>
+                            <div class="about-img-content">
+                                <i class="fas fa-code"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </section>
 
         <!-- Skills -->
-        <section id="skills" class="section container">
-            <h2 class="section-title">Skills</h2>
-
-            <div class="skills-grid">
-
-                <div class="skill-card">
-                    <div class="skill-top">
-                        <span class="skill-icon">🌸</span>
-                        <h3>HTML</h3>
-                    </div>
-                    <div class="skill-bar">
-                        <span style="width: 90%"></span>
-                    </div>
-                    <p>Semantic structure & clean layouts</p>
+        <section id="skills" class="section skills-section">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-tag">What I Know</span>
+                    <h2 class="section-title">My Skills</h2>
                 </div>
 
-                <div class="skill-card">
-                    <div class="skill-top">
-                        <span class="skill-icon">🎀</span>
-                        <h3>CSS</h3>
+                <div class="skills-grid">
+                    <div class="skill-card" data-skill="html">
+                        <div class="skill-card-inner">
+                            <div class="skill-icon-wrapper">
+                                <i class="fab fa-html5"></i>
+                            </div>
+                            <h3>HTML5</h3>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-progress="90"></div>
+                            </div>
+                            <p>Semantic structure & accessibility</p>
+                            <div class="skill-level">Advanced</div>
+                        </div>
                     </div>
-                    <div class="skill-bar">
-                        <span style="width: 85%"></span>
+
+                    <div class="skill-card" data-skill="css">
+                        <div class="skill-card-inner">
+                            <div class="skill-icon-wrapper">
+                                <i class="fab fa-css3-alt"></i>
+                            </div>
+                            <h3>CSS3</h3>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-progress="85"></div>
+                            </div>
+                            <p>Responsive & modern styling</p>
+                            <div class="skill-level">Advanced</div>
+                        </div>
                     </div>
-                    <p>Responsive UI + modern styling</p>
+
+                    <div class="skill-card" data-skill="js">
+                        <div class="skill-card-inner">
+                            <div class="skill-icon-wrapper">
+                                <i class="fab fa-js"></i>
+                            </div>
+                            <h3>JavaScript</h3>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-progress="75"></div>
+                            </div>
+                            <p>DOM, ES6+ & interactivity</p>
+                            <div class="skill-level">Intermediate</div>
+                        </div>
+                    </div>
+
+                    <div class="skill-card" data-skill="react">
+                        <div class="skill-card-inner">
+                            <div class="skill-icon-wrapper">
+                                <i class="fab fa-react"></i>
+                            </div>
+                            <h3>React</h3>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-progress="65"></div>
+                            </div>
+                            <p>Components, hooks & state</p>
+                            <div class="skill-level">Learning</div>
+                        </div>
+                    </div>
+
+                    <div class="skill-card" data-skill="git">
+                        <div class="skill-card-inner">
+                            <div class="skill-icon-wrapper">
+                                <i class="fab fa-git-alt"></i>
+                            </div>
+                            <h3>Git & GitHub</h3>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-progress="70"></div>
+                            </div>
+                            <p>Version control & collaboration</p>
+                            <div class="skill-level">Intermediate</div>
+                        </div>
+                    </div>
+
+                    <div class="skill-card" data-skill="design">
+                        <div class="skill-card-inner">
+                            <div class="skill-icon-wrapper">
+                                <i class="fas fa-paint-brush"></i>
+                            </div>
+                            <h3>UI/UX Design</h3>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-progress="60"></div>
+                            </div>
+                            <p>Clean design & user flow</p>
+                            <div class="skill-level">Learning</div>
+                        </div>
+                    </div>
                 </div>
 
-                <div class="skill-card">
-                    <div class="skill-top">
-                        <span class="skill-icon">✨</span>
-                        <h3>JavaScript</h3>
+                <div class="tools-section">
+                    <h3 class="tools-title">Tools & Technologies</h3>
+                    <div class="tools-grid">
+                        <div class="tool-item" title="VS Code">
+                            <i class="fas fa-code"></i>
+                            <span>VS Code</span>
+                        </div>
+                        <div class="tool-item" title="Figma">
+                            <i class="fab fa-figma"></i>
+                            <span>Figma</span>
+                        </div>
+                        <div class="tool-item" title="npm">
+                            <i class="fab fa-npm"></i>
+                            <span>npm</span>
+                        </div>
+                        <div class="tool-item" title="Terminal">
+                            <i class="fas fa-terminal"></i>
+                            <span>Terminal</span>
+                        </div>
+                        <div class="tool-item" title="Chrome DevTools">
+                            <i class="fab fa-chrome"></i>
+                            <span>DevTools</span>
+                        </div>
+                        <div class="tool-item" title="Tailwind CSS">
+                            <i class="fas fa-wind"></i>
+                            <span>Tailwind</span>
+                        </div>
                     </div>
-                    <div class="skill-bar">
-                        <span style="width: 75%"></span>
-                    </div>
-                    <p>DOM, events & interactive features</p>
                 </div>
-
-                <div class="skill-card">
-                    <div class="skill-top">
-                        <span class="skill-icon">💜</span>
-                        <h3>React</h3>
-                    </div>
-                    <div class="skill-bar">
-                        <span style="width: 65%"></span>
-                    </div>
-                    <p>Components, props & hooks basics</p>
-                </div>
-
-                <div class="skill-card">
-                    <div class="skill-top">
-                        <span class="skill-icon">🌷</span>
-                        <h3>GitHub</h3>
-                    </div>
-                    <div class="skill-bar">
-                        <span style="width: 70%"></span>
-                    </div>
-                    <p>Version control & collaboration</p>
-                </div>
-
-                <div class="skill-card">
-                    <div class="skill-top">
-                        <span class="skill-icon">💫</span>
-                        <h3>UI/UX</h3>
-                    </div>
-                    <div class="skill-bar">
-                        <span style="width: 60%"></span>
-                    </div>
-                    <p>Clean design + better user flow</p>
-                </div>
-
             </div>
-
         </section>
 
         <!-- Projects -->
-        <section id="projects" class="section container">
-            <h2 class="section-title">Projects</h2>
-
-            <div class="projects-grid">
-                <div class="project-card">
-                    <h3>Portfolio Website</h3>
-                    <p>
-                        A responsive personal portfolio with smooth navigation and clean UI.
-                    </p>
-                    <div class="project-tags">
-                        <span>HTML</span><span>CSS</span><span>JS</span>
-                    </div>
-                    <div class="project-buttons">
-                        <!-- <a href="#" class="btn small primary">Live</a> -->
-                        <a href="#" class="btn small outline">GitHub</a>
-                    </div>
+        <section id="projects" class="section projects-section">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-tag">My Work</span>
+                    <h2 class="section-title">Featured Projects</h2>
                 </div>
 
-                <div class="project-card">
-                    <h3>Task Manager</h3>
-                    <p>
-                        A task manager app with add/edit/delete and LocalStorage support.
-                    </p>
-                    <div class="project-tags">
-                        <span>JavaScript</span><span>DOM</span><span>LocalStorage</span>
+                <div class="projects-filter">
+                    <button class="filter-btn active" data-filter="all">All</button>
+                    <button class="filter-btn" data-filter="web">Web Apps</button>
+                    <button class="filter-btn" data-filter="ui">UI/UX</button>
+                </div>
+
+                <div class="projects-grid">
+                    <div class="project-card" data-category="web">
+                        <div class="project-image">
+                            <div class="project-img-placeholder">
+                                <i class="fas fa-laptop-code"></i>
+                            </div>
+                            <div class="project-overlay">
+                                <a href="#" class="project-link" title="Live Demo">
+                                    <i class="fas fa-external-link-alt"></i>
+                                </a>
+                                <a href="#" class="project-link" title="GitHub">
+                                    <i class="fab fa-github"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="project-content">
+                            <h3>Portfolio Website</h3>
+                            <p>A responsive personal portfolio showcasing my work with smooth animations and modern design.</p>
+                            <div class="project-tags">
+                                <span>HTML</span>
+                                <span>CSS</span>
+                                <span>JavaScript</span>
+                            </div>
+                        </div>
                     </div>
-                    <div class="project-buttons">
-                        <!-- <a href="#" class="btn small primary">Live</a> -->
-                        <a href="#" class="btn small outline">GitHub</a>
+
+                    <div class="project-card" data-category="web">
+                        <div class="project-image">
+                            <div class="project-img-placeholder">
+                                <i class="fas fa-tasks"></i>
+                            </div>
+                            <div class="project-overlay">
+                                <a href="#" class="project-link" title="Live Demo">
+                                    <i class="fas fa-external-link-alt"></i>
+                                </a>
+                                <a href="#" class="project-link" title="GitHub">
+                                    <i class="fab fa-github"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="project-content">
+                            <h3>Task Manager</h3>
+                            <p>A feature-rich task management app with add/edit/delete functionality and LocalStorage support.</p>
+                            <div class="project-tags">
+                                <span>JavaScript</span>
+                                <span>DOM</span>
+                                <span>LocalStorage</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="project-card" data-category="web">
+                        <div class="project-image">
+                            <div class="project-img-placeholder">
+                                <i class="fas fa-shopping-cart"></i>
+                            </div>
+                            <div class="project-overlay">
+                                <a href="#" class="project-link" title="Live Demo">
+                                    <i class="fas fa-external-link-alt"></i>
+                                </a>
+                                <a href="#" class="project-link" title="GitHub">
+                                    <i class="fab fa-github"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="project-content">
+                            <h3>E-Commerce Store</h3>
+                            <p>A modern e-commerce frontend with product filtering, cart functionality, and responsive design.</p>
+                            <div class="project-tags">
+                                <span>React</span>
+                                <span>Tailwind</span>
+                                <span>Vite</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="project-card" data-category="ui">
+                        <div class="project-image">
+                            <div class="project-img-placeholder">
+                                <i class="fas fa-cloud-sun"></i>
+                            </div>
+                            <div class="project-overlay">
+                                <a href="#" class="project-link" title="Live Demo">
+                                    <i class="fas fa-external-link-alt"></i>
+                                </a>
+                                <a href="#" class="project-link" title="GitHub">
+                                    <i class="fab fa-github"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="project-content">
+                            <h3>Weather App</h3>
+                            <p>A beautiful weather application with dynamic backgrounds and real-time data display.</p>
+                            <div class="project-tags">
+                                <span>HTML</span>
+                                <span>CSS</span>
+                                <span>API</span>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
 
         <!-- Contact -->
-        <!-- <section id="contact" class="section container">
-      <h2 class="section-title">Contact</h2>
+        <section id="contact" class="section contact-section">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-tag">Get In Touch</span>
+                    <h2 class="section-title">Contact Me</h2>
+                </div>
 
-      <form class="contact-form" id="contactForm">
-        <input type="text" id="name" placeholder="Your Name" required />
-        <input type="email" id="email" placeholder="Your Email" required />
-        <textarea id="message" rows="5" placeholder="Your Message" required></textarea>
-        <button type="submit" class="btn primary">Send Message</button>
-        <p class="form-msg" id="formMsg"></p>
-      </form>
-    </section> -->
+                <div class="contact-content">
+                    <div class="contact-info">
+                        <h3>Let's work together!</h3>
+                        <p>I'm always excited to connect with fellow developers, potential collaborators, or anyone interested in web development. Feel free to reach out!</p>
+
+                        <div class="contact-methods">
+                            <div class="contact-method">
+                                <div class="method-icon">
+                                    <i class="fas fa-envelope"></i>
+                                </div>
+                                <div class="method-details">
+                                    <span class="method-label">Email</span>
+                                    <a href="mailto:warisha@example.com">warisha@example.com</a>
+                                </div>
+                            </div>
+                            <div class="contact-method">
+                                <div class="method-icon">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                </div>
+                                <div class="method-details">
+                                    <span class="method-label">Location</span>
+                                    <span>Pakistan</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="contact-social">
+                            <a href="https://github.com/" target="_blank" class="contact-social-link">
+                                <i class="fab fa-github"></i>
+                            </a>
+                            <a href="https://linkedin.com/" target="_blank" class="contact-social-link">
+                                <i class="fab fa-linkedin-in"></i>
+                            </a>
+                            <a href="https://twitter.com/" target="_blank" class="contact-social-link">
+                                <i class="fab fa-twitter"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <form class="contact-form" id="contactForm">
+                        <div class="form-group">
+                            <label for="name">Your Name</label>
+                            <input type="text" id="name" name="name" placeholder="John Doe" required />
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Your Email</label>
+                            <input type="email" id="email" name="email" placeholder="john@example.com" required />
+                        </div>
+                        <div class="form-group">
+                            <label for="subject">Subject</label>
+                            <input type="text" id="subject" name="subject" placeholder="What's this about?" />
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea id="message" name="message" rows="5" placeholder="Your message here..." required></textarea>
+                        </div>
+                        <button type="submit" class="btn primary submit-btn">
+                            <span>Send Message</span>
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                        <p class="form-msg" id="formMsg"></p>
+                    </form>
+                </div>
+            </div>
+        </section>
 
         <footer class="footer">
-            <p>© 2026 Warisha Rehman. All rights reserved.</p>
+            <div class="container">
+                <div class="footer-content">
+                    <div class="footer-logo">
+                        <span class="logo-bracket">&lt;</span>
+                        Warisha
+                        <span class="logo-bracket">/&gt;</span>
+                    </div>
+                    <p class="footer-text">Crafting digital experiences with passion and precision.</p>
+                    <div class="footer-social">
+                        <a href="https://github.com/" target="_blank"><i class="fab fa-github"></i></a>
+                        <a href="https://linkedin.com/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="https://twitter.com/" target="_blank"><i class="fab fa-twitter"></i></a>
+                    </div>
+                    <p class="copyright">&copy; 2026 Warisha Rehman. All rights reserved.</p>
+                </div>
+            </div>
         </footer>
     </main>
-    <button class="back-to-top" id="backToTop">↑</button>
+
+    <button class="back-to-top" id="backToTop">
+        <i class="fas fa-arrow-up"></i>
+    </button>
 
     <script src="script.js"></script>
 </body>
