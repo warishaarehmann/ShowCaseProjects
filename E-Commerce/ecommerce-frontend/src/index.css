@@ -41,3 +41,13 @@ html, body {
 .animate-pop {
   animation: pop 0.25s ease-out;
 }
+
+body {
+  background: #fff1f6;
+  background-image:
+    radial-gradient(rgba(236, 72, 153, 0.10) 1px, transparent 1px),
+    radial-gradient(circle at top left, rgba(236, 72, 153, 0.18), transparent 45%),
+    radial-gradient(circle at bottom right, rgba(99, 102, 241, 0.14), transparent 45%);
+  background-size: 24px 24px, 100% 100%, 100% 100%;
+  background-attachment: fixed;
+}

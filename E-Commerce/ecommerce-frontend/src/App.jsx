@@ -70,8 +70,10 @@ export default function App() {
   return (
     <div className="min-h-screen bg-pink-50 text-gray-900">
       {/* Navbar */}
-      <header className="sticky top-0 z-50 border-b bg-white/70 backdrop-blur">
-        <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-3">
+      <header className="sticky top-0 z-50 border-b bg-white/70 backdrop-blur relative overflow-hidden">
+        <div className="pointer-events-none absolute inset-0 opacity-60
+                  bg-[radial-gradient(circle_at_top,rgba(236,72,153,0.10),transparent_55%)]"></div>
+        <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-3 relative">
           <h1 className="text-lg font-bold">
             <span className="text-pink-500">Glow</span>Shop
           </h1>
@@ -158,7 +160,11 @@ export default function App() {
       </header>
 
       {/* Products */}
-      <main className="mx-auto max-w-6xl px-4 py-8">
+      <main className="mx-auto max-w-6xl px-4 py-8 relative">
+        <div className="pointer-events-none absolute -inset-10 opacity-50 blur-3xl
+                  bg-[radial-gradient(circle,rgba(99,102,241,0.10),transparent_60%)]"></div>
+                    <div className="relative">
+
         <div className="mb-6 flex items-end justify-between">
           <div>
             <h2 className="text-2xl font-bold">Trending Products</h2>
@@ -177,8 +183,13 @@ export default function App() {
           {filteredProducts.map((p) => (
             <div
               key={p.id}
-              className="overflow-hidden rounded-2xl border bg-white shadow-sm transition hover:-translate-y-1 hover:shadow-lg"
+              className="group relative overflow-hidden rounded-2xl border bg-white/80 shadow-sm transition
+             hover:-translate-y-1 hover:shadow-xl backdrop-blur-md"
             >
+              {/* Hover Glow Layer */}
+              <div className="pointer-events-none absolute -inset-24 opacity-0 blur-2xl transition duration-300 group-hover:opacity-100
+                  bg-[radial-gradient(circle,rgba(236,72,153,0.20),transparent_55%)]"></div>
+
               <img src={p.img} alt={p.title} className="h-44 w-full object-cover" />
 
               <div className="p-4">
@@ -208,6 +219,7 @@ export default function App() {
             </div>
           ))}
         </div>
+         </div>
       </main>
 
       {/* Cart Drawer */}
@@ -241,10 +253,11 @@ export default function App() {
                     className="flex items-center gap-3 rounded-2xl border p-3"
                   >
                     <img
-                      src={item.img}
-                      alt={item.title}
-                      className="h-14 w-14 rounded-xl object-cover"
+                      src={p.img}
+                      alt={p.title}
+                      className="h-44 w-full object-cover transition duration-300 group-hover:scale-105"
                     />
+
                     <div className="flex-1">
                       <p className="font-semibold">{item.title}</p>
                       <p className="text-sm text-gray-600">₹{item.price}</p>
