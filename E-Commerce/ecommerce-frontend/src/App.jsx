@@ -16,6 +16,8 @@ export default function App() {
   const [currentBanner, setCurrentBanner] = useState(0);
 
   // Page loader
+    // Page loader
+
   useEffect(() => {
     const timer = setTimeout(() => setIsLoading(false), 1200);
     return () => clearTimeout(timer);
